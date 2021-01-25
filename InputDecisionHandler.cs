@@ -1,17 +1,17 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace LoyalEscapeBot002.Generics
+namespace ConsoleApptstingClasses004.TestObjects
 {
     class InputDecisionHandler
     {
         private readonly Type type;
         private IEnumerable<MethodInfo> typeMethods;
         private IEnumerable<MethodInfo> call;
-        public List<String> sensibles;
+        public List<string> sensibles;
 
         public InputDecisionHandler(Type type)
         {
@@ -23,6 +23,7 @@ namespace LoyalEscapeBot002.Generics
         {
             typeMethods  = from i in Assembly.GetExecutingAssembly().GetType(type.FullName).GetMethods()                     // .GetType(type.Name).
                        select i;
+            sensibles = new List<string> {"File", "Testing" , "Https"};
         }
 
         public bool Handle(string input, params object?[]? parameters)
@@ -41,7 +42,7 @@ namespace LoyalEscapeBot002.Generics
                 {
                     if (i.GetParameters().Length == 0)
                     {
-                        if(parameters.Length == 0)
+                        if(parameters == null || parameters.Length == 0)
                         {
                             i.Invoke(null, parameters);
                         }
