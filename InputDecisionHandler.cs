@@ -44,12 +44,12 @@ namespace ConsoleApptstingClasses004.TestObjects
                     {
                         if(parameters == null || parameters.Length == 0)
                         {
-                            i.Invoke(null, parameters);
+                            i.Invoke(null, null);
                         }
                         else
                         {
                             continue;
-                            throw new ArgumentOutOfRangeException("Length does not Match"); //take what you want either you work with Exceptions or returns or do not want anything to happen at all
+                            throw new ArgumentOutOfRangeException("Parameters do not Match"); //take what you want either you work with Exceptions or returns or do not want anything to happen at all
                             return false;
                         }
                     }
