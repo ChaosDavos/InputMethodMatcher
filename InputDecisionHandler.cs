@@ -21,8 +21,8 @@ namespace ConsoleApptstingClasses004.TestObjects
 
         private void Initialize()
         {
-            typeMethods  = from i in Assembly.GetExecutingAssembly().GetType(type.FullName).GetMethods()
-                       select i;
+            typeMethods  =  from i in Assembly.GetExecutingAssembly().GetType(type.FullName).GetMethods()
+                            select i;
             sensibles = new List<string> {"File", "Testing" , "Https"};
         }
 
